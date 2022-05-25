@@ -1,6 +1,6 @@
 from tqdm.auto import tqdm
 import collections
-from settings import *
+from TurQA.settings import *
 from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)

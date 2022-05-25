@@ -1,13 +1,10 @@
 from datasets import load_dataset, load_metric
-from datasets import ClassLabel, Sequence
-import random
-import pandas as pd
 from transformers import AutoTokenizer
-from process import prepare_train_features, prepare_validation_features
-from answer import postprocess_qa_predictions
-from settings import *
 from transformers import default_data_collator
 from transformers import AutoModelForQuestionAnswering, TrainingArguments, Trainer
+from TurQA.process import prepare_train_features, prepare_validation_features
+from TurQA.answer import postprocess_qa_predictions
+from TurQA.settings import *
 
 
 

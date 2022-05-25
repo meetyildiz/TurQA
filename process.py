@@ -1,10 +1,9 @@
 import imp
-from datasets import load_dataset, load_metric
 from datasets import ClassLabel, Sequence
 import random
 import pandas as pd
 from transformers import AutoTokenizer
-from settings import *
+from TurQA.settings import *
 
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 pad_on_right = tokenizer.padding_side == "right"
