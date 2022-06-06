@@ -3,7 +3,7 @@ from datasets import ClassLabel, Sequence
 import random
 import pandas as pd
 from transformers import AutoTokenizer
-from TurQA.settings import *
+from settings import *
 
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 pad_on_right = tokenizer.padding_side == "right"

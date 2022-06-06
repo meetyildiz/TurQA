@@ -2,13 +2,13 @@ from datasets import load_dataset, load_metric
 from transformers import AutoTokenizer
 from transformers import default_data_collator
 from transformers import AutoModelForQuestionAnswering, TrainingArguments, Trainer
-from TurQA.process import prepare_train_features, prepare_validation_features
-from TurQA.answer import postprocess_qa_predictions
-from TurQA.settings import *
+from process import prepare_train_features, prepare_validation_features
+from answer import postprocess_qa_predictions
+from settings import *
 
 
 
-def train(num_train_epochs=1, push_to_hub=False):
+def train(num_train_epochs=3, push_to_hub=False):
     datasets = load_dataset(dataset, download_mode='force_redownload', ignore_verifications=True)
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
     model = AutoModelForQuestionAnswering.from_pretrained(model_checkpoint)
@@ -86,3 +86,9 @@ def train(num_train_epochs=1, push_to_hub=False):
     return metrics
 #from transformers import AutoModelForQuestionAnswering
 #model = AutoModelForQuestionAnswering.from_pretrained("sgugger/my-awesome-model")
+
+
+
+if __name__ == "__main__":
+    train()
+
